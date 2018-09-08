@@ -1,5 +1,8 @@
+<div id="gallery">
+<h2><% @category.name %><small class="pull-right"><%= link_to "Edit",
+   edit_category_path %></small></h2>
 <% if @images.exists? %>
-  <% @category.name %>
+  <% @images.each_slice(4) do |image| %>
     <div class= "row">
       <% image.each do |image| %>
         <div class="grid_4">
@@ -18,7 +21,7 @@
         </div>
       <% end %>
     </div>
-
+  <% end %>
 <% else %>
   <p> there are no images. </p>
 <% end %>
