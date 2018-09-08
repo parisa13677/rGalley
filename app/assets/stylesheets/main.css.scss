@@ -31,6 +31,19 @@ body {
     font: 300 14px/20px 'Open Sans', sans-serif;
 }
 
+#edit_images {
+    margin-bottom: 10px;
+
+}
+
+#edit_images img {
+    width: 100%;
+}
+
+.delete {
+    color: red;
+}
+
 .ic {
 	border:0;
 	float:right;
