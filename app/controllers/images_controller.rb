@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
   end
 
   def new
-    @image = Image.all
+    @image = Image.new
   end
 
   def create

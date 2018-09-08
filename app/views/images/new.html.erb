@@ -1,6 +1,6 @@
 <h2>Upload Image</h2>
 
-<%= form_for @image, :html => {:multipart => true} do |f| %>
+<%= form_for @image, :html => { :multipart => true } do |f| %>
    <!--check for errors-->
     <% if @image.errors.any? %>
       <% @image.errors.full_messages.each do |msg| %>
