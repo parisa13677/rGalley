@@ -21,22 +21,23 @@
     <div class="container">
       <div class="row">
         <div class="grid_12">
-        <h1>
-          <a href="index.html">
-            <img src="images/logo.png" alt="Logo alt">
-          </a>
-        </h1>
+
+            <nav>
+              <ul class="sf-menu">
+               <li ><% link_to "Home", root_path %></li>
+               <% @categoryNav.each do |category|%>
+                 <li><%= link_to category.name, category_path(category.id)%></li>
+               <% end %>
+             </ul>
+            </nav>
+
           <div class="navigation ">
             <nav>
               <ul class="sf-menu">
-               <li class="current"><a href="index.html">home</a></li>
-               <li><a href="#">menu</a></li>
-               <li><a href="#">reservation</a></li>
-               <li><a href="#">blog</a></li>
-               <li><a href="#">contacts</a></li>
+               <li> <%= link_to "Upload Photo", upload_path %></li>
+               <li> <%= link_to "Add Category", new_category_path %></li>
              </ul>
             </nav>
-            <div class="clear"></div>
           </div>
         </div>
       </div>
@@ -47,8 +48,16 @@
 <!--=====================
           Content
 ======================-->
-<section class="content gallery pad1"><div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+<section class="content gallery pad1"><div class="ic">More Website
+Templates @ TemplateMonster.com - July 30, 2018!</div>
   <div class="container">
+    <!--Alerts & Messages-->
+      <% if flash[:notice]%>
+        <div class="alert alert-success"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:alert]%>
+        <div class="alert alert-danger"><%= flash[:alert] %></div>
+      <% end %>
     <%= yield %>
   </div>
 </section>
