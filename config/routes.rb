@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  get "upload" => "images#new", :as => "upload"
+  get 'upload' => 'images#new', :as => 'upload'
   get 'images/index'
   get 'images/new'
   get 'images/create'
