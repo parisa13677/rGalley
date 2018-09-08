@@ -24,6 +24,12 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+
+    flash[:notice]='image deleted'
+
+    redirect_to images_path
   end
 
   private
