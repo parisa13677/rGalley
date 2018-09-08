@@ -1,5 +1,10 @@
+# frozen_string_literal: true
+
+# this is a ImagesController
 class ImagesController < ApplicationController
   def index
+    @images = Image.all
+    @categories = Category.all
   end
 
   def new
